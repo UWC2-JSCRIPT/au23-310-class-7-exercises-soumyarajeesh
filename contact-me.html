@@ -1,10 +1,69 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
-  </head>
-
-  <body>
-    <!-- TODO -->
-  </body>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Me</h1>
+        <form id="contact-form" action="#" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required minlength="3">
+                <small class="error" id="name-error"></small>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required pattern="\w+@\w+\.\w+">
+                <small class="error" id="email-error"></small>
+            </div>
+            <div class="form-group">
+                <label for="reason">Reason for Contacting</label>
+                <select id="reason" name="reason" required>
+                    <option value="" disabled selected>Choose One</option>
+                    <option value="job">Job opportunity</option>
+                    <option value="code">Talk code</option>
+                </select>
+                <small class="error" id="reason-error"></small>
+            </div>
+            <div id="job-fields" class="hidden">
+                <div class="form-group">
+                    <label for="job-title">Job Title</label>
+                    <input type="text" id="job-title" name="job-title">
+                    <small class="error" id="job-title-error"></small>
+                </div>
+                <div class="form-group">
+                    <label for="company-website">Company Website</label>
+                    <input type="url" id="company-website" name="company-website" pattern="https?://.+\..+">
+                    <small class="error" id="company-website-error"></small>
+                </div>
+            </div>
+            <div id="code-fields" class="hidden">
+                <div class="form-group">
+                    <label for="coding-language">Coding Language</label>
+                    <select id="coding-language" name="coding-language">
+                        <option value="" disabled selected>Choose One</option>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                        <option value="javascript">JavaScript</option>
+                        <!-- Add more coding languages here -->
+                    </select>
+                    <small class="error" id="coding-language-error"></small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required minlength="10"></textarea>
+                <small class="error" id="message-error"></small>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+    <script src="contact-me.js"></script>
+</body>
 </html>
